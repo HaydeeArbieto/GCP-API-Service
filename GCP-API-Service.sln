@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "GCP-API-Service", "GCP-API-Service\GCP-API-Service.njsproj", "{6098DA63-B044-49AD-95CA-0E34B347C1C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6098DA63-B044-49AD-95CA-0E34B347C1C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6098DA63-B044-49AD-95CA-0E34B347C1C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6098DA63-B044-49AD-95CA-0E34B347C1C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6098DA63-B044-49AD-95CA-0E34B347C1C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {997EAE05-B112-46C7-804E-9DB6319996B8}
+	EndGlobalSection
+EndGlobal
