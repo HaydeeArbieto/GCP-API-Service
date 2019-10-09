@@ -6,15 +6,16 @@
         "type": "git",
         "url": "https://github.com/HaydeeArbieto/GCP-API-Service"
     },
-    "main": "server.js",
+    "main": "app.js",
     "scripts": {
-        "start": "node server.js"
+        "start": "node app.js"
     },
     "description": "GCP-API-Service",
     "author": {
         "name": "Haydee Arbieto"
     },
     "dependencies": {
+        "@google-cloud/datastore": "^4.3.0",
         "body-parser": "^1.15.0",
         "cookie-parser": "^1.4.0",
         "debug": "^2.2.0",

@@ -13,7 +13,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6098da63-b044-49ad-95ca-0e34b347c1c0</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>app.js</StartupFile>
+    <StartupFile>app1.js</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -31,12 +31,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="app1.js" />
+    <Compile Include="datastore\customer.js" />
     <Compile Include="customer\api.js" />
     <Compile Include="customer\crud.js" />
     <Compile Include="customer\model-datastore.js" />
     <Compile Include="routes\index.js" />
-    <Compile Include="routes\users.js" />
-    <Compile Include="server.js" />
+    <Compile Include="routes\customer.js" />
+    <Content Include=".gitignore" />
     <Content Include="app.yaml" />
     <Content Include="package.json" />
     <Content Include="public\stylesheets\main.css" />
@@ -48,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="customer\" />
+    <Folder Include="datastore\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />

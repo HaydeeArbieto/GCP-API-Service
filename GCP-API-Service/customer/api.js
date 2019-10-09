@@ -25,7 +25,7 @@ router.get('/', (req, res, next) => {
 
 /*** GET /api/customer/:id ***/
 router.get('/:customer', (req, res, next) => {
-    model.read(req.params.book, (err, entity) => {
+    model.read(req.query.id, (err, entity) => {
         if (err) {
             next(err);
             return;

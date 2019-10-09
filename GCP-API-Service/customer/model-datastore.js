@@ -5,7 +5,6 @@ const { Datastore } = require('@google-cloud/datastore');
 const ds = new Datastore();
 const kind = 'Customer';
 
-
 function fromDatastore(obj) {
     obj.id = obj[Datastore.KEY].id;
     return obj;
@@ -27,7 +26,7 @@ function toDatastore(obj, nonIndexed) {
     return results;
 }
 
-// Lists all list in the Datastore sorted alphabetically by title.
+// Lists all list in the Datastore.
 // The ``limit`` argument determines the maximum amount of results to
 // return per page. The ``token`` argument allows requesting additional
 // pages. The callback is invoked with ``(err, customer, nextPageToken)``.
@@ -36,7 +35,7 @@ function list(limit, token, cb) {
     const q = ds
         .createQuery([kind])
         .limit(limit)
-        .order('title')
+        .order('FirstName')
         .start(token);
 
     ds.runQuery(q, (err, entities, nextQuery) => {
