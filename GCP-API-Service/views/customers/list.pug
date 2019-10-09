@@ -1,0 +1,24 @@
+extends ../base.pug
+
+block content
+  h3 Books
+
+  a(href="/customer/add", class='btn btn-success btn-sm')
+    i.glyphicon.glyphicon-plus
+    span  Add book
+
+  each book in books
+    .media
+      a(href=`/customer/${customer.id}`)
+        .media-body
+          h4= customer.firstname
+          p= customer.lastname
+
+  if !customer.length
+    p No customers found.
+
+  if nextPageToken
+    nav
+      ul.pager
+        li
+          a(href=`?pageToken=${encodeURIComponent(nextPageToken)}`) More

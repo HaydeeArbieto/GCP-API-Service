@@ -27,6 +27,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
+/*
+ * // Customer
+app.use('/customer', require('./customer/crud'));
+app.use('/api/customer', require('./customer/api'));
+
+// Redirect root to /customer
+app.get('/', (req, res) => {
+  res.redirect('/customer');
+});
+ */
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     var err = new Error('Not Found');
