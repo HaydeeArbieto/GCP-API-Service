@@ -3,15 +3,19 @@ extends ../base.pug
 block content
   h3 Customers
 
+    a(href="/customers/add", class='btn btn-success btn-sm')
+    i.glyphicon.glyphicon-plus
+    span  Add customer
+
   each customer in customers
     .media
-      a(href=`/customer/${customer.id}`)
+      a(href=`/customers/${customer.id}`)
         .media-body
-          p= customer.firstname
-          p= customer.lastname
+          h4= customer.FirstName
+          p= customer.LastName
 
-  if !customer.length
-    p No customers found.
+  if !customers.length
+    p No books found.
 
   if nextPageToken
     nav

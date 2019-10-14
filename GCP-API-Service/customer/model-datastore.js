@@ -51,6 +51,28 @@ function list(limit, token, cb) {
     });
 }
 
+function update(id, data, cb) {
+    let key;
+    if (id) {
+        key = ds.key([kind, parseInt(id, 10)]);
+    } else {
+        key = ds.key(kind);
+    }
+
+    const entity = {
+        key: key,
+        data: toDatastore(data, ['address']),
+    };
+
+    ds.save(entity, err => {
+        data.id = entity.key.id;
+        cb(err, err ? null : data);
+    });
+}
+
+function create(data, cb) {
+    update(null, data, cb);
+}
 
 function read(id, cb) {
     const key = ds.key([kind, parseInt(id, 10)]);
@@ -69,6 +91,15 @@ function read(id, cb) {
     });
 }
 
+function _delete(id, cb) {
+    const key = ds.key([kind, parseInt(id, 10)]);
+    ds.delete(key, cb);
+}
+
 module.exports = {
+    create,
+    read,
+    update,
+    delete: _delete,
     list
 };

@@ -14,14 +14,24 @@
     "author": {
         "name": "Haydee Arbieto"
     },
+    "engines": {
+        "node": ">=8"
+    },
     "dependencies": {
         "@google-cloud/datastore": "^4.3.0",
-        "body-parser": "^1.15.0",
-        "cookie-parser": "^1.4.0",
+        "body-parser": "1.19.0",
+        "cookie-parser": "1.19.0",
         "debug": "^2.2.0",
         "express": "^4.14.0",
         "morgan": "^1.7.0",
-        "pug": "^2.0.0-beta6",
+        "nconf": "^0.10.0",
+        "pug": "^2.0.3",
         "serve-favicon": "^2.3.0"
+    },
+    "devDependencies": {
+        "@google-cloud/nodejs-repo-tools": "^3.0.0",
+        "ava": "^0.25.0",
+        "proxyquire": "^2.1.0",
+        "sinon": "^7.0.0"
     }
 }

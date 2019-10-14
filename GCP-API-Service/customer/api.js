@@ -6,6 +6,7 @@ const model = require('./model-datastore');
 
 const router = express.Router();
 
+// Automatically parse request body as JSON
 router.use(bodyParser.json());
 
 /*** GET /api/customer ***/
@@ -22,15 +23,47 @@ router.get('/', (req, res, next) => {
     });
 });
 
-
-/*** GET /api/customer/:id ***/
-router.get('/:customer', (req, res, next) => {
-    model.read(req.query.id, (err, entity) => {
+/*** POST /api/customer : Create a new customer. ***/
+router.post('/', (req, res, next) => {
+    model.create(req.body, (err, entity) => {
         if (err) {
             next(err);
             return;
         }
         res.json(entity);
+    });
+});
+
+/*** GET /api/customers/:id  -> Retrieve a customer. ***/
+router.get('/:customer', (req, res, next) => {
+    model.read(req.params.customer, (err, entity) => {
+        if (err) {
+            next(err);
+            return;
+        }
+        res.json(entity);
+    });
+});
+
+/*** PUT /api/customers/:id -> Update a customer. ***/
+router.put('/:customer', (req, res, next) => {
+    model.update(req.params.customer, req.body, (err, entity) => {
+        if (err) {
+            next(err);
+            return;
+        }
+        res.json(entity);
+    });
+});
+
+/*** DELETE /api/customers/:id -> Delete a customer. ***/
+router.delete('/:customer', (req, res, next) => {
+    model.delete(req.params.customer, err => {
+        if (err) {
+            next(err);
+            return;
+        }
+        res.status(200).send('OK');
     });
 });
 

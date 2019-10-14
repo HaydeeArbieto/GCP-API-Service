@@ -1,0 +1,21 @@
+﻿extends ../base.pug
+
+block content
+  h3 Customer
+    small
+
+  .btn-group
+    a(href=`/customers/${customer.id}/edit`, class='btn btn-primary btn-sm')
+      i.glyphicon.glyphicon-edit
+      span  Edit customer
+    a(href=`/customers/${customer.id}/delete`, class='btn btn-danger btn-sm')
+      i.glyphicon.glyphicon-trash
+      span  Delete customer
+
+  .media
+    .media-body
+      h4= customer.FirstName
+        | &nbsp;
+        small= customer.LastName
+      h5 By #{customer.FirstName||'unknown'}
+      p= customer.address

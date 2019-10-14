@@ -13,7 +13,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6098da63-b044-49ad-95ca-0e34b347c1c0</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>app1.js</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -31,8 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
-    <Compile Include="app1.js" />
-    <Compile Include="datastore\customer.js" />
+    <Compile Include="config.js" />
     <Compile Include="customer\api.js" />
     <Compile Include="customer\crud.js" />
     <Compile Include="customer\model-datastore.js" />
@@ -40,17 +40,25 @@
     <Compile Include="routes\customer.js" />
     <Content Include=".gitignore" />
     <Content Include="app.yaml" />
+    <Content Include="Index.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="package.json" />
+    <Content Include="public\images\favicon.ico" />
     <Content Include="public\stylesheets\main.css" />
     <Content Include="README.md" />
+    <Content Include="views\base.pug" />
+    <Content Include="views\customers\customer-form.pug" />
     <Content Include="views\customers\list.pug" />
+    <Content Include="views\customers\view.pug">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="views\index.pug" />
     <Content Include="views\layout.pug" />
     <Content Include="views\error.pug" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="customer\" />
-    <Folder Include="datastore\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
